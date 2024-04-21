@@ -1,7 +1,7 @@
 window.onload = function () {
-  loadHTMLPart("../html/header.html", "header");
-  loadHTMLPart("../html/home.html", "main");
-  loadHTMLPart("../html/footer.html", "footer");
+  loadHTMLPart("/FrontEnd/html/header.html", "header");
+  loadHTMLPart("/FrontEnd/html/home.html", "main");
+  loadHTMLPart("/FrontEnd/html/footer.html", "footer");
 };
 
 function loadHTMLPart(url, targetId) {
@@ -17,5 +17,6 @@ function loadHTMLPart(url, targetId) {
     })
     .catch((error) => {
       console.error("There was a problem loading the HTML:", error);
+      // Thêm các xử lý khác ở đây nếu cần
     });
 }
