@@ -24,7 +24,44 @@
   justify-content: center;
   display: inline-block;
   position: relative;
-  animation: 5s rotate linear infinite;
+  z-index: 10;
+}
+
+.glow::before,
+.glow::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  border-radius: 20px;
+  background: linear-gradient(
+    45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red
+  );
+  background-size: 400%;
+  height: calc(100% + 4px);
+  width: calc(100% + 4px);
+  z-index: -1;
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
 
 .search_input {
